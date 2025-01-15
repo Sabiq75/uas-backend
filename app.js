@@ -1,14 +1,13 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const sequelize = require('./config/database');
 const alumniRoutes = require('./routes/alumniroutes');
 
 require('dotenv').config();
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
-app.use(bodyParser.json());
-app.use('/api/alumni', alumniRoutes);
+app.use(express.json());
+app.use('/alumni', alumniRoutes);
 
 sequelize.sync()
     .then(() => {

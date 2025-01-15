@@ -9,19 +9,31 @@ const Alumni = sequelize.define('Alumni', {
     },
     name: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
-    graduationYear: {
+    phone: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    address: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+    },
+    graduation_year: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
     },
-    major: {
-        type: DataTypes.STRING,
-        allowNull: false,
+    status: {
+        type: DataTypes.ENUM('fresh graduate','employed','unemployed'),
+        allowNull: true,
     },
-    email: {
+    company_name: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
+    },
+    position: {
+        type: DataTypes.STRING,
+        allowNull: true,
     },
 }, {
     tableName: 'alumni',
